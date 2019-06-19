@@ -8,7 +8,34 @@ import static java.util.Arrays.asList;
  */
 public class StreamAPI {
     public static void main(String[] args) {
-
+        getEvenNumbers();
+        countOfLengthGreaterThanFour();
+        checkLetter();
+        getTheDoubleOfNumb();
+        getCarNumbers();
+        getCarNumbersYearGreaterThan();
+        getEvenNumbList();
+        converToUpperCase();
+        putInQ();
+        groupByHumanSurname();
+        groupByWithCount();
+        groupAndConvertToSet();
+        groupWithAmountOfMoney();
+        getPetNames();
+        convertArrayFromMultiToOne();
+        findFirstExample();
+        isAllNumbOdds();
+        isAllNumbersEven();
+        isEvenNumber();
+        parallelStreamExample();
+        parallelToSequential();
+        parallelStreamDifference();
+        distinctTest();
+        noneEqualsClassMethod();
+        sortedStreamExample();
+        sortedWithComparator();
+        limitExample();
+        skipExample();
     }
 
     /**
