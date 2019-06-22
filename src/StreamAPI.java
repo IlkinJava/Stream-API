@@ -15,7 +15,7 @@ public class StreamAPI {
         getCarNumbers();
         getCarNumbersYearGreaterThan();
         getEvenNumbList();
-        converToUpperCase();
+        convertToUpperCase();
         putInQ();
         groupByHumanSurname();
         groupByWithCount();
@@ -36,6 +36,11 @@ public class StreamAPI {
         sortedWithComparator();
         limitExample();
         skipExample();
+        stringJoiner();
+        stringJoin();
+        stringListJoin();
+        collectionsJoining();
+        listJoining();
     }
 
     /**
@@ -190,7 +195,7 @@ public class StreamAPI {
         System.out.println(evenNumbers2); //output [2, 4, 6, 8, 10]
     }
 
-    static void converToUpperCase() {
+    static void convertToUpperCase() {
         List<String> names = asList("John", "Arya", "Sansa");
         Set<String> upperCaseNames = new HashSet<>();
 
@@ -539,5 +544,42 @@ public class StreamAPI {
         numbers.stream()
                 .skip(5)
                 .forEach(System.out::println); //output 6 7 8 9 10
+    }
+
+    static void stringJoiner() {
+        StringJoiner joiner = new StringJoiner(", ");
+        joiner.add("John");
+        joiner.add("Danny");
+        joiner.add("Lui");
+        System.out.println(joiner.toString()); //output John, Danny, Lui
+    }
+
+    static void stringJoin() {
+        String numbers = String.join(":", "1", "0", "1", "0");
+        System.out.println(numbers); //output 1-0-1-0
+    }
+
+    static void stringListJoin() {
+        List<String> databases = Arrays.asList("OracleDB", "Mongo", "PostgreSQL", "MySQL");
+        String string = String.join(", ", databases);
+        System.out.println(string); //output OracleDB, Mongo, PostgreSQL, MySQL
+    }
+
+    static void collectionsJoining() {
+        List<String> frameworks = Arrays.asList("Spring", "Hibernate", "JPA", "JSF");
+
+        String collect = frameworks.stream()
+                .collect(Collectors.joining("; "));
+
+        System.out.println(collect); //output Spring; Hibernate; JPA; JSF
+    }
+
+    static void listJoining() {
+        List<String> list = Arrays.asList("React", "SpringBoot", "NodeJS", "Django");
+
+        String collect = list.stream()
+                .collect(Collectors.joining("; ", "{", "}"));
+
+        System.out.println(collect); //output {React; SpringBoot; NodeJS; Django}
     }
 }
